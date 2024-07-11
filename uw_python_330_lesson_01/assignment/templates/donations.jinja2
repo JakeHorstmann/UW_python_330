@@ -1,0 +1,11 @@
+{% extends 'base.jinja2' %}
+
+{% block subtitle %}Donations{% endblock subtitle %}
+
+{% block content %}
+<ul>
+    {% for donation in donations %}
+        <li><a href="{{ url_for('all') + donation.donor.name + '/' }}"<b>{{ donation.donor.name }}</b></a>: {{ donation.value }} </li>
+    {% endfor %}
+</ul>
+{% endblock content %}

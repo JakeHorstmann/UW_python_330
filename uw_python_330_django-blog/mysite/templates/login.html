@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% load socialaccount %}
+
+{% block content %}
+<h1>My Blog Login</h1>
+<form action="" method="POST">{% csrf_token %}
+  {{ form.as_p }}
+  <p><input type="submit" value="Log In"></p>
+</form>
+<a href="{% provider_login_url 'github' %}">Sign Up with GitHub</a>
+{% endblock %}
